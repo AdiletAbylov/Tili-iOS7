@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GRFXSearchProxy.h"
 
-@interface GRFXMainViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GRFXSearchProxyDelegate>
+@interface GRFXMainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, GRFXSearchProxyDelegate, UITextFieldDelegate>
 @property(weak) IBOutlet UITableView *tableView;
+@property(weak) IBOutlet UITextField *searchTextField;
+
+- (IBAction)didTapSearch:(id)sender;
 @end

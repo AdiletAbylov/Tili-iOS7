@@ -22,15 +22,19 @@
     NSArray *_results;
 @private
     __weak UITableView *_tableView;
+    __weak UITextField *_searchTextField;
 }
 
 @synthesize tableView = _tableView;
+
+@synthesize searchTextField = _searchTextField;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _searchTextField.delegate = self;
     [[self navigationController] setNavigationBarHidden:YES];
 }
 
@@ -46,8 +50,7 @@
 {
     [super viewDidAppear:animated];
     [self initSearchProxy];
-    _searchingWord = @"Бала";
-    [_searchProxy searchWord:_searchingWord];
+
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
@@ -82,7 +85,11 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"%d результатов для слова %@", _results.count, _searchingWord];
+    if (_results)
+    {
+        return [NSString stringWithFormat:@"%d результатов для слова %@", _results.count, _searchingWord];
+    }
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,6 +104,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"DetailsSegue" sender:self];
+    [self hideKeyboard];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -105,4 +113,32 @@
     GRFXSearchResult *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
     controller.searchResult = searchResult;
 }
+
+- (IBAction)didTapSearch:(id)sender
+{
+    [self startSearch];
+}
+
+-(void)startSearch
+{
+    if(![_searchTextField.text isEqualToString:@""])
+    {
+        [_searchProxy searchWord:_searchTextField.text];
+        _searchingWord = _searchTextField.text;
+        [self hideKeyboard];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self startSearch];
+    [self hideKeyboard];
+    return YES;
+}
+
+-(void)hideKeyboard
+{
+    [_searchTextField resignFirstResponder];
+}
+
 @end
