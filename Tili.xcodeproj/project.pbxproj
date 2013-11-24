@@ -14,13 +14,18 @@
 		60C8732A18409DD600143B35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8732918409DD600143B35 /* main.m */; };
 		60C8732E18409DD600143B35 /* GRFXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8732D18409DD600143B35 /* GRFXAppDelegate.m */; };
 		60C8733118409DD600143B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C8732F18409DD600143B35 /* Main.storyboard */; };
-		60C8733418409DD600143B35 /* GRFXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8733318409DD600143B35 /* GRFXViewController.m */; };
+		60C8733418409DD600143B35 /* GRFXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8733318409DD600143B35 /* GRFXMainViewController.m */; };
 		60C8733618409DD600143B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C8733518409DD600143B35 /* Images.xcassets */; };
 		60C8733D18409DD600143B35 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8733C18409DD600143B35 /* XCTest.framework */; };
 		60C8733E18409DD600143B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8731D18409DD600143B35 /* Foundation.framework */; };
 		60C8733F18409DD700143B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8732118409DD600143B35 /* UIKit.framework */; };
 		60C8734718409DD700143B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60C8734518409DD700143B35 /* InfoPlist.strings */; };
 		60C8734918409DD700143B35 /* TiliTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8734818409DD700143B35 /* TiliTests.m */; };
+		71F0F1BB1B8D31B34CA1B64F /* GRFXSearchProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FFDAB78D3D5938BFB8B7 /* GRFXSearchProxy.m */; };
+		71F0F24C934FAA8C185DDBE7 /* GRFXResultDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */; };
+		71F0F5426E5B67B990417998 /* GRFXSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */; };
+		71F0FD936E5A2FEA4F624B86 /* GRFXResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FF3B8B59CB161C08C94B /* GRFXResultsCell.m */; };
+		A65256275C024581B99D2B4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71281A940EEC47C98766CD21 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +50,24 @@
 		60C8732C18409DD600143B35 /* GRFXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRFXAppDelegate.h; sourceTree = "<group>"; };
 		60C8732D18409DD600143B35 /* GRFXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRFXAppDelegate.m; sourceTree = "<group>"; };
 		60C8733018409DD600143B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		60C8733218409DD600143B35 /* GRFXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRFXViewController.h; sourceTree = "<group>"; };
-		60C8733318409DD600143B35 /* GRFXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRFXViewController.m; sourceTree = "<group>"; };
+		60C8733218409DD600143B35 /* GRFXMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRFXMainViewController.h; sourceTree = "<group>"; };
+		60C8733318409DD600143B35 /* GRFXMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRFXMainViewController.m; sourceTree = "<group>"; };
 		60C8733518409DD600143B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		60C8733B18409DD600143B35 /* TiliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TiliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C8733C18409DD600143B35 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		60C8734418409DD700143B35 /* TiliTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TiliTests-Info.plist"; sourceTree = "<group>"; };
 		60C8734618409DD700143B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60C8734818409DD700143B35 /* TiliTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TiliTests.m; sourceTree = "<group>"; };
+		71281A940EEC47C98766CD21 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71F0F21A462830675F6922AA /* GRFXResultDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXResultDetailsViewController.h; sourceTree = "<group>"; };
+		71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXSearchResult.m; sourceTree = "<group>"; };
+		71F0FADEFE95D6DD947D4510 /* GRFXResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXResultsCell.h; sourceTree = "<group>"; };
+		71F0FBA355EBB47E0671D458 /* GRFXSearchProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXSearchProxy.h; sourceTree = "<group>"; };
+		71F0FBE28887E9E1836642A3 /* GRFXSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXSearchResult.h; sourceTree = "<group>"; };
+		71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXResultDetailsViewController.m; sourceTree = "<group>"; };
+		71F0FF3B8B59CB161C08C94B /* GRFXResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXResultsCell.m; sourceTree = "<group>"; };
+		71F0FFDAB78D3D5938BFB8B7 /* GRFXSearchProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXSearchProxy.m; sourceTree = "<group>"; };
+		CBEB20718DFF448DA08E5FEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,7 @@
 				60C8732018409DD600143B35 /* CoreGraphics.framework in Frameworks */,
 				60C8732218409DD600143B35 /* UIKit.framework in Frameworks */,
 				60C8731E18409DD600143B35 /* Foundation.framework in Frameworks */,
+				A65256275C024581B99D2B4A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +102,7 @@
 				60C8734218409DD700143B35 /* TiliTests */,
 				60C8731C18409DD600143B35 /* Frameworks */,
 				60C8731B18409DD600143B35 /* Products */,
+				CBEB20718DFF448DA08E5FEF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +122,7 @@
 				60C8731F18409DD600143B35 /* CoreGraphics.framework */,
 				60C8732118409DD600143B35 /* UIKit.framework */,
 				60C8733C18409DD600143B35 /* XCTest.framework */,
+				71281A940EEC47C98766CD21 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,10 +133,15 @@
 				60C8732C18409DD600143B35 /* GRFXAppDelegate.h */,
 				60C8732D18409DD600143B35 /* GRFXAppDelegate.m */,
 				60C8732F18409DD600143B35 /* Main.storyboard */,
-				60C8733218409DD600143B35 /* GRFXViewController.h */,
-				60C8733318409DD600143B35 /* GRFXViewController.m */,
+				60C8733218409DD600143B35 /* GRFXMainViewController.h */,
+				60C8733318409DD600143B35 /* GRFXMainViewController.m */,
 				60C8733518409DD600143B35 /* Images.xcassets */,
 				60C8732418409DD600143B35 /* Supporting Files */,
+				71F0FB3EF2BE8D0E93A658C0 /* Cells */,
+				71F0FCD5C3837F24109E7B61 /* Service */,
+				71F0F88F64E3630C6246FED3 /* Model */,
+				71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */,
+				71F0F21A462830675F6922AA /* GRFXResultDetailsViewController.h */,
 			);
 			path = Tili;
 			sourceTree = "<group>";
@@ -152,6 +175,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		71F0F88F64E3630C6246FED3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */,
+				71F0FBE28887E9E1836642A3 /* GRFXSearchResult.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71F0FB3EF2BE8D0E93A658C0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71F0FADEFE95D6DD947D4510 /* GRFXResultsCell.h */,
+				71F0FF3B8B59CB161C08C94B /* GRFXResultsCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71F0FCD5C3837F24109E7B61 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				71F0FFDAB78D3D5938BFB8B7 /* GRFXSearchProxy.m */,
+				71F0FBA355EBB47E0671D458 /* GRFXSearchProxy.h */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60C8734C18409DD700143B35 /* Build configuration list for PBXNativeTarget "Tili" */;
 			buildPhases = (
+				CAAF04E0197E42A689685A0F /* Check Pods Manifest.lock */,
 				60C8731618409DD600143B35 /* Sources */,
 				60C8731718409DD600143B35 /* Frameworks */,
 				60C8731818409DD600143B35 /* Resources */,
+				4392CEB06BB14AFDB652EB9E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +256,7 @@
 						DevelopmentTeam = VMU86T7C97;
 					};
 					60C8733A18409DD600143B35 = {
-						TestTargetID = 60C8731918409DD600143B35;
+						TestTargetID = 60C8731918409DD600143B35 /* Tili */;
 					};
 				};
 			};
@@ -219,6 +271,8 @@
 			mainGroup = 60C8731118409DD600143B35;
 			productRefGroup = 60C8731B18409DD600143B35 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				60C8731918409DD600143B35 /* Tili */,
@@ -248,14 +302,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4392CEB06BB14AFDB652EB9E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAAF04E0197E42A689685A0F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60C8731618409DD600143B35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60C8733418409DD600143B35 /* GRFXViewController.m in Sources */,
+				60C8733418409DD600143B35 /* GRFXMainViewController.m in Sources */,
 				60C8732A18409DD600143B35 /* main.m in Sources */,
 				60C8732E18409DD600143B35 /* GRFXAppDelegate.m in Sources */,
+				71F0FD936E5A2FEA4F624B86 /* GRFXResultsCell.m in Sources */,
+				71F0F1BB1B8D31B34CA1B64F /* GRFXSearchProxy.m in Sources */,
+				71F0F5426E5B67B990417998 /* GRFXSearchResult.m in Sources */,
+				71F0F24C934FAA8C185DDBE7 /* GRFXResultDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +470,7 @@
 		};
 		60C8734D18409DD700143B35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEB20718DFF448DA08E5FEF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -388,12 +480,14 @@
 				INFOPLIST_FILE = "Tili/Tili-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		60C8734E18409DD700143B35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEB20718DFF448DA08E5FEF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -403,6 +497,7 @@
 				INFOPLIST_FILE = "Tili/Tili-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
