@@ -31,8 +31,9 @@
     [super viewDidLoad];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    // Do any additional setup after loading the view, typically from a nib.
+    [[self navigationController] setNavigationBarHidden:YES];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,6 +48,7 @@
     [self initSearchProxy];
     _searchingWord = @"Бала";
     [_searchProxy searchWord:_searchingWord];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
 

@@ -28,6 +28,13 @@
     [_webView loadHTMLString:[self htmlTextForSearchResult:_searchResult] baseURL:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}
+
+
 - (NSString *)htmlTextForSearchResult:(GRFXSearchResult *)searchResult
 {
     NSString *value = [searchResult.value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
