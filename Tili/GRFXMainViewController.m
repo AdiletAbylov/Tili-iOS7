@@ -35,8 +35,9 @@
     [super viewDidLoad];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _searchTextField.delegate = self;
     [[self navigationController] setNavigationBarHidden:YES];
+    [self initSearchProxy];
+    [self initSearchTextField];
 }
 
 
@@ -50,11 +51,39 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self initSearchProxy];
-
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
+- (void)initSearchTextField
+{
+    _searchTextField.delegate = self;
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:(CGRect) {0, 0, 320, 44}];
+    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *oItem = [[UIBarButtonItem alloc] initWithTitle:@"Ө" style:UIBarButtonItemStyleBordered target:self action:@selector(didTouchAdditionalCharsButton:)];
+    UIBarButtonItem *yItem = [[UIBarButtonItem alloc] initWithTitle:@"Ү" style:UIBarButtonItemStyleBordered target:self action:@selector(didTouchAdditionalCharsButton:)];
+    UIBarButtonItem *nItem = [[UIBarButtonItem alloc] initWithTitle:@"Ң" style:UIBarButtonItemStyleBordered target:self action:@selector(didTouchAdditionalCharsButton:)];
+    oItem.width = 44;
+    yItem.width = 44;
+    nItem.width = 44;
+    toolbar.items = [NSArray arrayWithObjects:flexItem, oItem, yItem, nItem, nil];
+    _searchTextField.inputAccessoryView = toolbar;
+}
+
+- (void)didTouchAdditionalCharsButton:(id)sender
+{
+    UIBarButtonItem *barButtonItem = (UIBarButtonItem *) sender;
+    if ([barButtonItem.title isEqualToString:@"Ө"])
+    {
+        _searchTextField.text = [_searchTextField.text stringByAppendingString:@"ө"];
+    } else if ([barButtonItem.title isEqualToString:@"Ү"])
+    {
+        _searchTextField.text = [_searchTextField.text stringByAppendingString:@"ү"];
+    } else
+    {
+        _searchTextField.text = [_searchTextField.text stringByAppendingString:@"ң"];
+    }
+
+}
 
 - (void)initSearchProxy
 {
@@ -121,9 +150,9 @@
     [self startSearch];
 }
 
--(void)startSearch
+- (void)startSearch
 {
-    if(![_searchTextField.text isEqualToString:@""])
+    if (![_searchTextField.text isEqualToString:@""])
     {
         [_searchProxy searchWord:_searchTextField.text];
         _searchingWord = _searchTextField.text;
@@ -139,7 +168,7 @@
     return YES;
 }
 
--(void)hideKeyboard
+- (void)hideKeyboard
 {
     [_searchTextField resignFirstResponder];
 }
