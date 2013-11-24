@@ -10,6 +10,7 @@
 #import "GRFXResultsCell.h"
 #import "GRFXSearchResult.h"
 #import "GRFXResultDetailsViewController.h"
+#import "SVProgressHUD.h"
 
 @interface GRFXMainViewController ()
 
@@ -64,13 +65,14 @@
 
 - (void)searchProxyDidSuccessWithResults:(NSArray *)results
 {
+    [SVProgressHUD dismiss];
     _results = results;
     [_tableView reloadData];
 }
 
 - (void)searchProxyDidFailWithErrorString:(NSString *)errorString
 {
-
+    [SVProgressHUD showErrorWithStatus:errorString];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -126,6 +128,7 @@
         [_searchProxy searchWord:_searchTextField.text];
         _searchingWord = _searchTextField.text;
         [self hideKeyboard];
+        [SVProgressHUD showWithStatus:@"Поиск..."];
     }
 }
 
