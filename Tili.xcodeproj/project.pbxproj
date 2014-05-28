@@ -256,7 +256,7 @@
 						DevelopmentTeam = VMU86T7C97;
 					};
 					60C8733A18409DD600143B35 = {
-						TestTargetID = 60C8731918409DD600143B35 /* Tili */;
+						TestTargetID = 60C8731918409DD600143B35;
 					};
 				};
 			};
@@ -271,8 +271,6 @@
 			mainGroup = 60C8731118409DD600143B35;
 			productRefGroup = 60C8731B18409DD600143B35 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				60C8731918409DD600143B35 /* Tili */,
@@ -478,7 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tili/Tili-Prefix.pch";
 				INFOPLIST_FILE = "Tili/Tili-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -495,7 +493,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tili/Tili-Prefix.pch";
 				INFOPLIST_FILE = "Tili/Tili-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -563,6 +561,7 @@
 				60C8734E18409DD700143B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60C8734F18409DD700143B35 /* Build configuration list for PBXNativeTarget "TiliTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +570,7 @@
 				60C8735118409DD700143B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
