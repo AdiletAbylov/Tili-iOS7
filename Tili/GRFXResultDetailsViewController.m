@@ -6,6 +6,8 @@
 
 #import "GRFXResultDetailsViewController.h"
 #import "GRFXSearchResult.h"
+#import "GRFXBookmarksManager.h"
+#import "SVProgressHUD.h"
 
 
 @implementation GRFXResultDetailsViewController
@@ -29,7 +31,6 @@
 }
 
 
-
 - (NSString *)htmlTextForSearchResult:(GRFXSearchResult *)searchResult
 {
     NSString *value = [searchResult.value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
@@ -37,13 +38,15 @@
                                                             "<head><style type=\"text/css\"> body {font-family: \"HelveticaNeue-Light\"; font-size: 12;}</style>"
                                                             "</head>"
                                                             "<body><H1>%@</H1><i>%@</i><p>%@</p></body></html>",
-                    searchResult.keyword, searchResult.dictname, value];
+                                                    searchResult.keyword, searchResult.dictname, value];
     return htmlText;
 }
 
 - (IBAction)didTouchBookmarkButton:(id)sender
 {
-
+    [SVProgressHUD showWithStatus:@"Сохранение"];
+    [[GRFXBookmarksManager sharedManager] saveBookmark:_searchResult];
+    [SVProgressHUD dismiss];
 }
 
 @end

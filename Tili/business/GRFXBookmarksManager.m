@@ -61,11 +61,8 @@
 
 - (NSArray *)bookmarks
 {
-    if (!_bookmarks)
-    {
-        _bookmarks = [self readBookmarks];
-    }
-    return _bookmarks;
+
+    return [self readBookmarks];
 }
 
 - (NSArray *)readBookmarks
@@ -89,6 +86,12 @@
 
 - (void)saveBookmark:(GRFXSearchResult *)bookmark
 {
+    NSString *sql = @"INSERT INTO bookmarks (text_value, dictionaries, search_word) VALUES(?,?,?)";
+    BOOL updated = [_database executeUpdate:sql, bookmark.value, bookmark.dictname, bookmark.keyword];
+    if (!updated)
+    {
+        NSLog(@"Insert fail");
+    }
 
 }
 
