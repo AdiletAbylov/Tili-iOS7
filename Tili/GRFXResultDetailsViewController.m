@@ -28,18 +28,13 @@
     [_webView loadHTMLString:[self htmlTextForSearchResult:_searchResult] baseURL:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
-}
 
 
 - (NSString *)htmlTextForSearchResult:(GRFXSearchResult *)searchResult
 {
     NSString *value = [searchResult.value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
     NSString *htmlText = [NSString stringWithFormat:@"<html>"
-                                                            "<head><style type=\"text/css\"> body {font-family: \"Helvetica\"; font-size: 12;}</style>"
+                                                            "<head><style type=\"text/css\"> body {font-family: \"HelveticaNeue-Light\"; font-size: 12;}</style>"
                                                             "</head>"
                                                             "<body><H1>%@</H1><i>%@</i><p>%@</p></body></html>",
                     searchResult.keyword, searchResult.dictname, value];

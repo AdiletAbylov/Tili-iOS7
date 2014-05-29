@@ -35,7 +35,8 @@
     [super viewDidLoad];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    [[self navigationController] setNavigationBarHidden:YES];
+    _tableView.contentInset = (UIEdgeInsets) {20, 0, 0, 0};
+
     [self initSearchProxy];
     [self initSearchTextField];
 }
@@ -51,7 +52,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)initSearchTextField
