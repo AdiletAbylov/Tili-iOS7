@@ -132,7 +132,9 @@
                             <constraint firstAttribute="trailing" secondItem="1pF-YF-geD" secondAttribute="trailing" id="rfL-2M-mIQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="u4i-5X-n6V"/>
+                    <navigationItem key="navigationItem" id="u4i-5X-n6V">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="bookmarks" id="0aG-IO-dGD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="1pF-YF-geD" id="OfQ-og-AUa"/>
                     </connections>

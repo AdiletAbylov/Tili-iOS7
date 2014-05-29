@@ -12,4 +12,6 @@
 @interface GRFXResultDetailsViewController : UIViewController <UIWebViewDelegate>
 @property(weak) IBOutlet UIWebView *webView;
 @property GRFXSearchResult *searchResult;
+
+- (IBAction)didTouchBookmarkButton:(id)sender;
 @end

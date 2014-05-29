@@ -40,4 +40,10 @@
                     searchResult.keyword, searchResult.dictname, value];
     return htmlText;
 }
+
+- (IBAction)didTouchBookmarkButton:(id)sender
+{
+
+}
+
 @end
