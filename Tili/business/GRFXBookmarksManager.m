@@ -43,14 +43,19 @@
 {
     NSFileManager *fm = [NSFileManager defaultManager];
     NSString *documents_dir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *db_path = [documents_dir stringByAppendingPathComponent:[NSString stringWithFormat:@"database.s3db"]];
+    NSString *db_path = [documents_dir stringByAppendingPathComponent:[NSString stringWithFormat:@"bookmarks.sqlite"]];
     NSString *template_path = [[NSBundle mainBundle] pathForResource:@"bookmarks" ofType:@"sqlite"];
 
     if (![fm fileExistsAtPath:db_path])
+    {
         [fm copyItemAtPath:template_path toPath:db_path error:nil];
+    }
+
     FMDatabase *db = [FMDatabase databaseWithPath:db_path];
     if (![db open])
+    {
         NSLog(@"Failed to open database!");
+    }
     return db;
 }
 

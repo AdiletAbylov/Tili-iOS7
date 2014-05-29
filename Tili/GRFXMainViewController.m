@@ -141,9 +141,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    GRFXResultDetailsViewController *controller = segue.destinationViewController;
-    GRFXSearchResult *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
-    controller.searchResult = searchResult;
+    if ([segue.identifier isEqualToString:@"DetailsSegue"])
+    {
+        GRFXResultDetailsViewController *controller = segue.destinationViewController;
+        GRFXSearchResult *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
+        controller.searchResult = searchResult;
+    }
 }
 
 - (IBAction)didTapSearch:(id)sender

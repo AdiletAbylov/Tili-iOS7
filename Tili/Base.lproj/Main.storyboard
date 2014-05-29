@@ -94,7 +94,13 @@
                             <constraint firstItem="nnm-te-VSI" firstAttribute="top" secondItem="go9-YK-F26" secondAttribute="bottom" id="wkm-hd-62A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tili" id="9lW-mi-dOH"/>
+                    <navigationItem key="navigationItem" title="Tili" id="9lW-mi-dOH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="bookmarks" id="T7o-RF-gLu">
+                            <connections>
+                                <segue destination="cT6-Pa-Duv" kind="push" id="dtQ-IR-zJS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="hDl-5F-NeM" id="V42-rJ-qHH"/>
                         <outlet property="tableView" destination="go9-YK-F26" id="nmX-qJ-F8m"/>
@@ -105,10 +111,75 @@
             </objects>
             <point key="canvasLocation" x="465" y="770"/>
         </scene>
+        <!--Bookmarks View Controller - Bookmarks-->
+        <scene sceneID="pDe-0i-PZY">
+            <objects>
+                <viewController id="cT6-Pa-Duv" customClass="GRFXBookmarksViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7kE-wz-TVy"/>
+                        <viewControllerLayoutGuide type="bottom" id="47U-YB-Z5s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kOe-2r-FLs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="9w3-f6-5yu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ResultsCell" rowHeight="116" id="LPo-Pp-XMe" customClass="GRFXResultsCell">
+                                        <rect key="frame" x="0.0" y="119" width="320" height="116"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LPo-Pp-XMe" id="h0d-5M-ION">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gi-aJ-0AN">
+                                                    <rect key="frame" x="20" y="10" width="267" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="HHt-Z1-v2p">
+                                                    <rect key="frame" x="20" y="33" width="267" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-YO-ae7">
+                                                    <rect key="frame" x="20" y="91" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dictionaryLabel" destination="Ozr-YO-ae7" id="I3f-IA-sjp"/>
+                                            <outlet property="spoilerLabel" destination="HHt-Z1-v2p" id="bI6-XD-COr"/>
+                                            <outlet property="titleWordLabel" destination="3Gi-aJ-0AN" id="2Fs-Sw-uVo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bookmarks" id="sf3-YS-Z1X"/>
+                    <connections>
+                        <outlet property="tableView" destination="9w3-f6-5yu" id="cnU-TI-HCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Gp-lG-KDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="424"/>
+        </scene>
         <!--Result Details View Controller-->
         <scene sceneID="6tM-dP-zJE">
             <objects>
-                <viewController id="qX8-15-7aq" customClass="GRFXResultDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsController" id="qX8-15-7aq" customClass="GRFXResultDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KM1-ng-zi4"/>
                         <viewControllerLayoutGuide type="bottom" id="V1c-oJ-J4g"/>
@@ -133,7 +204,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u4i-5X-n6V">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="bookmarks" id="0aG-IO-dGD"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="0aG-IO-dGD"/>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="1pF-YF-geD" id="OfQ-og-AUa"/>
@@ -141,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SE5-td-4MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="858"/>
+            <point key="canvasLocation" x="941" y="1190"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
