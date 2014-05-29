@@ -23,8 +23,10 @@
 		60C8734918409DD700143B35 /* TiliTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8734818409DD700143B35 /* TiliTests.m */; };
 		71F0F1BB1B8D31B34CA1B64F /* GRFXSearchProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FFDAB78D3D5938BFB8B7 /* GRFXSearchProxy.m */; };
 		71F0F24C934FAA8C185DDBE7 /* GRFXResultDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */; };
+		71F0F4A6B68C045E347CB390 /* GRFXBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0F2AC83B0FBBC21C8419A /* GRFXBookmark.m */; };
 		71F0F5426E5B67B990417998 /* GRFXSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */; };
 		71F0FD936E5A2FEA4F624B86 /* GRFXResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FF3B8B59CB161C08C94B /* GRFXResultsCell.m */; };
+		71F0FE7A643AF284DE68E457 /* GRFXBookmarksManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FCC2097D8BF09368D1B9 /* GRFXBookmarksManager.m */; };
 		A65256275C024581B99D2B4A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71281A940EEC47C98766CD21 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,11 +62,15 @@
 		60C8734818409DD700143B35 /* TiliTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TiliTests.m; sourceTree = "<group>"; };
 		71281A940EEC47C98766CD21 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F0F21A462830675F6922AA /* GRFXResultDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXResultDetailsViewController.h; sourceTree = "<group>"; };
+		71F0F2AC83B0FBBC21C8419A /* GRFXBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXBookmark.m; sourceTree = "<group>"; };
+		71F0F2BCF2D63B11A413B956 /* GRFXBookmarksManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXBookmarksManager.h; sourceTree = "<group>"; };
 		71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXSearchResult.m; sourceTree = "<group>"; };
 		71F0FADEFE95D6DD947D4510 /* GRFXResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXResultsCell.h; sourceTree = "<group>"; };
 		71F0FBA355EBB47E0671D458 /* GRFXSearchProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXSearchProxy.h; sourceTree = "<group>"; };
 		71F0FBE28887E9E1836642A3 /* GRFXSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXSearchResult.h; sourceTree = "<group>"; };
+		71F0FCC2097D8BF09368D1B9 /* GRFXBookmarksManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXBookmarksManager.m; sourceTree = "<group>"; };
 		71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXResultDetailsViewController.m; sourceTree = "<group>"; };
+		71F0FE6AF4116DBD9484C94E /* GRFXBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRFXBookmark.h; sourceTree = "<group>"; };
 		71F0FF3B8B59CB161C08C94B /* GRFXResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXResultsCell.m; sourceTree = "<group>"; };
 		71F0FFDAB78D3D5938BFB8B7 /* GRFXSearchProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRFXSearchProxy.m; sourceTree = "<group>"; };
 		CBEB20718DFF448DA08E5FEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				71F0F88F64E3630C6246FED3 /* Model */,
 				71F0FD3F9F71DDF9FFDAD719 /* GRFXResultDetailsViewController.m */,
 				71F0F21A462830675F6922AA /* GRFXResultDetailsViewController.h */,
+				71F0F881E14B2EBB27704958 /* business */,
 			);
 			path = Tili;
 			sourceTree = "<group>";
@@ -175,11 +182,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		71F0F881E14B2EBB27704958 /* business */ = {
+			isa = PBXGroup;
+			children = (
+				71F0FCC2097D8BF09368D1B9 /* GRFXBookmarksManager.m */,
+				71F0F2BCF2D63B11A413B956 /* GRFXBookmarksManager.h */,
+			);
+			path = business;
+			sourceTree = "<group>";
+		};
 		71F0F88F64E3630C6246FED3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				71F0F557FFB245F9C063C3D7 /* GRFXSearchResult.m */,
 				71F0FBE28887E9E1836642A3 /* GRFXSearchResult.h */,
+				71F0F2AC83B0FBBC21C8419A /* GRFXBookmark.m */,
+				71F0FE6AF4116DBD9484C94E /* GRFXBookmark.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +363,8 @@
 				71F0F1BB1B8D31B34CA1B64F /* GRFXSearchProxy.m in Sources */,
 				71F0F5426E5B67B990417998 /* GRFXSearchResult.m in Sources */,
 				71F0F24C934FAA8C185DDBE7 /* GRFXResultDetailsViewController.m in Sources */,
+				71F0FE7A643AF284DE68E457 /* GRFXBookmarksManager.m in Sources */,
+				71F0F4A6B68C045E347CB390 /* GRFXBookmark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
