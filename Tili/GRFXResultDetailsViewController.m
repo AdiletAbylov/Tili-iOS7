@@ -5,7 +5,7 @@
 
 
 #import "GRFXResultDetailsViewController.h"
-#import "GRFXNote.h"
+#import "GRFXEntry.h"
 #import "GRFXBookmarksManager.h"
 #import "SVProgressHUD.h"
 
@@ -15,29 +15,29 @@
 
 @private
 
-    GRFXNote *_searchResult;
+    GRFXEntry *_entry;
     __weak UIWebView *_webView;
-    BOOL _isBookmarked;
+    BOOL _bookmarked;
 }
 
-@synthesize searchResult = _searchResult;
+@synthesize entry = _entry;
 
 @synthesize webView = _webView;
 
 
-@synthesize isBookmarked = _isBookmarked;
+@synthesize bookmarked = _bookmarked;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = _searchResult.keyword;
+    self.title = _entry.keyword;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [_webView loadHTMLString:[self htmlTextForSearchResult:_searchResult] baseURL:nil];
-    if (_isBookmarked)
+    [_webView loadHTMLString:[self htmlTextForEntry:_entry] baseURL:nil];
+    if (_bookmarked)
     {
         UIBarButtonItem *removeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(didTouchBookmarkButton:)];
         self.navigationItem.rightBarButtonItem = removeItem;
@@ -49,21 +49,21 @@
 }
 
 
-- (NSString *)htmlTextForSearchResult:(GRFXNote *)searchResult
+- (NSString *)htmlTextForEntry:(GRFXEntry *)entry
 {
-    NSString *value = [searchResult.value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
+    NSString *value = [entry.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
     NSString *htmlText = [NSString stringWithFormat:@"<html>"
                                                             "<head><style type=\"text/css\"> body {font-family: \"HelveticaNeue-Light\"; font-size: 12;}</style>"
                                                             "</head>"
                                                             "<body><H1>%@</H1><i>%@</i><p>%@</p></body></html>",
-                                                    searchResult.keyword, searchResult.dictname, value];
+                                                    entry.keyword, entry.dictionaryName, value];
     return htmlText;
 }
 
 - (IBAction)didTouchBookmarkButton:(id)sender
 {
     [SVProgressHUD showWithStatus:@"Сохранение"];
-    [[GRFXBookmarksManager sharedManager] saveNote:_searchResult];
+    [[GRFXBookmarksManager sharedManager] saveEntry:_entry];
     [SVProgressHUD dismiss];
 }
 

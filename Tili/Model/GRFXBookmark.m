@@ -4,20 +4,26 @@
 //
 
 #import "GRFXBookmark.h"
-#import "GRFXNote.h"
+#import "GRFXEntry.h"
 
 
 @implementation GRFXBookmark
 {
 
+@private
+    NSInteger _id;
+    GRFXEntry *_entry;
 }
-- (id)initWithId:(NSInteger)id Note:(GRFXNote *)note
+@synthesize id = _id;
+@synthesize entry = _entry;
+
+- (id)initWithId:(NSInteger)id entry:(GRFXEntry *)entry
 {
     self = [super init];
     if (self)
     {
-        self.id = id;
-        self.note = note;
+        _id = id;
+        _entry = entry;
     }
     return self;
 }

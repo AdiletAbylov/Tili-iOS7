@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRFXNote;
+@class GRFXEntry;
 
 
 @interface GRFXResultsCell : UITableViewCell
@@ -14,5 +14,5 @@
 @property (weak) IBOutlet UILabel *spoilerLabel;
 @property (weak) IBOutlet UILabel *dictionaryLabel;
 
--(void)fillCellWithSearchResult:(GRFXNote *)searchResult;
+-(void)fillCellWithSearchResult:(GRFXEntry *)searchResult;
 @end

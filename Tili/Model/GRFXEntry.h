@@ -7,8 +7,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface GRFXNote : NSObject
+@interface GRFXEntry : NSObject
 @property NSString *keyword;
-@property NSString *value;
-@property NSString *dictname;
+@property NSString *text;
+@property NSString *dictionaryName;
 @end

@@ -4,7 +4,7 @@
 //
 
 #import "GRFXBookmarksManager.h"
-#import "GRFXNote.h"
+#import "GRFXEntry.h"
 #import "FMDatabase.h"
 #import "GRFXBookmark.h"
 
@@ -72,22 +72,22 @@
     NSMutableArray *bookmarks = [NSMutableArray new];
     while ([result next])
     {
-        GRFXNote *note = [GRFXNote new];
-        note.value = [result stringForColumn:@"text_value"];
-        note.dictname = [result stringForColumn:@"dictionaries"];
+        GRFXEntry *note = [GRFXEntry new];
+        note.text = [result stringForColumn:@"text_value"];
+        note.dictionaryName = [result stringForColumn:@"dictionaries"];
         note.keyword = [result stringForColumn:@"search_word"];
         NSInteger bookmarkId = [result intForColumn:@"id"];
-        GRFXBookmark *bookmark = [[GRFXBookmark alloc] initWithId:bookmarkId Note:note];
+        GRFXBookmark *bookmark = [[GRFXBookmark alloc] initWithId:bookmarkId entry:note];
         [bookmarks addObject:bookmark];
     }
 
     return bookmarks;
 }
 
-- (void)saveNote:(GRFXNote *)bookmark
+- (void)saveEntry:(GRFXEntry *)bookmark
 {
     NSString *sql = @"INSERT INTO bookmarks (text_value, dictionaries, search_word) VALUES(?,?,?)";
-    BOOL updated = [_database executeUpdate:sql, bookmark.value, bookmark.dictname, bookmark.keyword];
+    BOOL updated = [_database executeUpdate:sql, bookmark.text, bookmark.dictionaryName, bookmark.keyword];
     if (!updated)
     {
         NSLog(@"Insert fail");
@@ -95,7 +95,7 @@
 
 }
 
-- (void)removeBookmark:(GRFXNote *)bookmark
+- (void)removeBookmark:(GRFXEntry *)bookmark
 {
 
 }
