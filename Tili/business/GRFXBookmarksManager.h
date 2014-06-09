@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRFXSearchResult;
+@class GRFXNote;
 
 
 @interface GRFXBookmarksManager : NSObject
@@ -13,7 +13,7 @@
 
 @property(nonatomic, readonly) NSArray *bookmarks;
 
-- (void)saveBookmark:(GRFXSearchResult *)bookmark;
+- (void)saveNote:(GRFXNote *)bookmark;
 
-- (void)removeBookmark:(GRFXSearchResult *)bookmark;
+- (void)removeBookmark:(GRFXNote *)bookmark;
 @end

@@ -4,14 +4,14 @@
 //
 
 #import "GRFXBookmark.h"
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 
 
 @implementation GRFXBookmark
 {
 
 }
-- (id)initWithId:(NSInteger)id Note:(GRFXSearchResult *)note
+- (id)initWithId:(NSInteger)id Note:(GRFXNote *)note
 {
     self = [super init];
     if (self)

@@ -4,10 +4,10 @@
 //
 
 
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 
 
-@implementation GRFXSearchResult
+@implementation GRFXNote
 {
 
 @private

@@ -4,7 +4,7 @@
 //
 
 #import "GRFXBookmarksManager.h"
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 #import "FMDatabase.h"
 #import "GRFXBookmark.h"
 
@@ -72,7 +72,7 @@
     NSMutableArray *bookmarks = [NSMutableArray new];
     while ([result next])
     {
-        GRFXSearchResult *note = [GRFXSearchResult new];
+        GRFXNote *note = [GRFXNote new];
         note.value = [result stringForColumn:@"text_value"];
         note.dictname = [result stringForColumn:@"dictionaries"];
         note.keyword = [result stringForColumn:@"search_word"];
@@ -84,7 +84,7 @@
     return bookmarks;
 }
 
-- (void)saveBookmark:(GRFXSearchResult *)bookmark
+- (void)saveNote:(GRFXNote *)bookmark
 {
     NSString *sql = @"INSERT INTO bookmarks (text_value, dictionaries, search_word) VALUES(?,?,?)";
     BOOL updated = [_database executeUpdate:sql, bookmark.value, bookmark.dictname, bookmark.keyword];
@@ -95,7 +95,7 @@
 
 }
 
-- (void)removeBookmark:(GRFXSearchResult *)bookmark
+- (void)removeBookmark:(GRFXNote *)bookmark
 {
 
 }

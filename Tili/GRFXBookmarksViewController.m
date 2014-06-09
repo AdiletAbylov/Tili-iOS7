@@ -57,18 +57,19 @@
 {
     static const NSString *cellID = @"ResultsCell";
     GRFXResultsCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
-    GRFXSearchResult *searchResult = ((GRFXBookmark *) [_bookmarks objectAtIndex:indexPath.row]).note;
+    GRFXNote *searchResult = ((GRFXBookmark *) [_bookmarks objectAtIndex:indexPath.row]).note;
     [cell fillCellWithSearchResult:searchResult];
     return cell;
 }
 
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GRFXResultDetailsViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsController"];
-    GRFXSearchResult *searchResult = ((GRFXBookmark *) [_bookmarks objectAtIndex:indexPath.row]).note;
+    GRFXNote *searchResult = ((GRFXBookmark *) [_bookmarks objectAtIndex:indexPath.row]).note;
     controller.searchResult = searchResult;
+    controller.hidesBottomBarWhenPushed = YES;
+    controller.isBookmarked = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

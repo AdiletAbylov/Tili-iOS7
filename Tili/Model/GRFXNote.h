@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface GRFXSearchResult : NSObject
+@interface GRFXNote : NSObject
 @property NSString *keyword;
 @property NSString *value;
 @property NSString *dictname;

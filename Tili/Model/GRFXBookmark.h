@@ -5,12 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRFXSearchResult;
+@class GRFXNote;
 
 
 @interface GRFXBookmark : NSObject
 @property NSInteger id;
-@property GRFXSearchResult *note;
+@property GRFXNote *note;
 
-- (id)initWithId:(NSInteger)id Note:(GRFXSearchResult *)note;
+- (id)initWithId:(NSInteger)id Note:(GRFXNote *)note;
 @end

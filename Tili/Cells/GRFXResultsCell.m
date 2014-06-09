@@ -5,7 +5,7 @@
 
 
 #import "GRFXResultsCell.h"
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 
 
 @implementation GRFXResultsCell
@@ -20,7 +20,7 @@
 @synthesize spoilerLabel = _spoilerLabel;
 @synthesize dictionaryLabel = _dictionaryLabel;
 
-- (void)fillCellWithSearchResult:(GRFXSearchResult *)searchResult
+- (void)fillCellWithSearchResult:(GRFXNote *)searchResult
 {
     _titleWordLabel.text = searchResult.keyword;
     _spoilerLabel.text = searchResult.value;

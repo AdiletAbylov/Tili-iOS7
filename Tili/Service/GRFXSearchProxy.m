@@ -7,7 +7,7 @@
 #import "GRFXSearchProxy.h"
 #import "AFHTTPRequestOperation.h"
 #import "DCKeyValueObjectMapping.h"
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 
 #define SEARCH_URL @"http://tili.kg/dict/api/search/"
 
@@ -27,7 +27,7 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
     {
-        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[GRFXSearchResult class]];
+        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[GRFXNote class]];
         NSArray *results = [parser parseArray:responseObject];
         if (results.count == 0)
         {

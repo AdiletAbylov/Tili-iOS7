@@ -8,7 +8,7 @@
 
 #import "GRFXMainViewController.h"
 #import "GRFXResultsCell.h"
-#import "GRFXSearchResult.h"
+#import "GRFXNote.h"
 #import "GRFXResultDetailsViewController.h"
 #import "SVProgressHUD.h"
 
@@ -128,7 +128,7 @@
 {
     static const NSString *cellID = @"ResultsCell";
     GRFXResultsCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
-    GRFXSearchResult *searchResult = [_results objectAtIndex:indexPath.row];
+    GRFXNote *searchResult = [_results objectAtIndex:indexPath.row];
     [cell fillCellWithSearchResult:searchResult];
     return cell;
 }
@@ -144,8 +144,9 @@
     if ([segue.identifier isEqualToString:@"DetailsSegue"])
     {
         GRFXResultDetailsViewController *controller = segue.destinationViewController;
-        GRFXSearchResult *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
+        GRFXNote *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
         controller.searchResult = searchResult;
+        controller.hidesBottomBarWhenPushed = YES;
     }
 }
 
