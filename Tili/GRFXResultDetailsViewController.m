@@ -37,11 +37,7 @@
 {
     [super viewDidAppear:animated];
     [_webView loadHTMLString:[self htmlTextForEntry:_entry] baseURL:nil];
-    if (_bookmarked)
-    {
-        UIBarButtonItem *removeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(didTouchBookmarkButton:)];
-        self.navigationItem.rightBarButtonItem = removeItem;
-    } else
+    if (!_bookmarked)
     {
         UIBarButtonItem *bookmarkItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(didTouchBookmarkButton:)];
         self.navigationItem.rightBarButtonItem = bookmarkItem;
@@ -66,5 +62,6 @@
     [[GRFXBookmarksManager sharedManager] saveEntry:_entry];
     [SVProgressHUD dismiss];
 }
+
 
 @end

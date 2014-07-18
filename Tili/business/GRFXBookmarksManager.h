@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @class GRFXEntry;
+@class GRFXBookmark;
 
 
 @interface GRFXBookmarksManager : NSObject
@@ -13,7 +14,8 @@
 
 @property(nonatomic, readonly) NSArray *bookmarks;
 
-- (void)saveEntry:(GRFXEntry *)bookmark;
+- (void)saveEntry:(GRFXEntry *)entry;
 
-- (void)removeBookmark:(GRFXEntry *)bookmark;
+- (void)removeBookmark:(GRFXBookmark *)bookmark;
+
 @end

@@ -7,7 +7,11 @@
 #import <Foundation/Foundation.h>
 
 @class GRFXEntry;
+@class GRFXResultsCell;
 
+@protocol GRFXResultsCellDelegate <NSObject>
+
+@end
 
 @interface GRFXResultsCell : UITableViewCell
 @property (weak) IBOutlet UILabel *titleWordLabel;

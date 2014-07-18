@@ -84,10 +84,10 @@
     return bookmarks;
 }
 
-- (void)saveEntry:(GRFXEntry *)bookmark
+- (void)saveEntry:(GRFXEntry *)entry
 {
     NSString *sql = @"INSERT INTO bookmarks (text_value, dictionaries, search_word) VALUES(?,?,?)";
-    BOOL updated = [_database executeUpdate:sql, bookmark.text, bookmark.dictionaryName, bookmark.keyword];
+    BOOL updated = [_database executeUpdate:sql, entry.text, entry.dictionaryName, entry.keyword];
     if (!updated)
     {
         NSLog(@"Insert fail");
@@ -95,9 +95,11 @@
 
 }
 
-- (void)removeBookmark:(GRFXEntry *)bookmark
-{
 
+- (void)removeBookmark:(GRFXBookmark *)bookmark
+{
+    NSString *sql = @"DELETE FROM bookmarks WHERE id=?";
+    BOOL updated = [_database executeUpdate:sql, bookmark.id];
 }
 
 
