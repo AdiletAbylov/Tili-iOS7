@@ -6,13 +6,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRFXSearchResult;
+@class GRFXEntry;
+@class GRFXResultsCell;
 
+@protocol GRFXResultsCellDelegate <NSObject>
+
+@end
 
 @interface GRFXResultsCell : UITableViewCell
 @property (weak) IBOutlet UILabel *titleWordLabel;
 @property (weak) IBOutlet UILabel *spoilerLabel;
 @property (weak) IBOutlet UILabel *dictionaryLabel;
 
--(void)fillCellWithSearchResult:(GRFXSearchResult *)searchResult;
+-(void)fillCellWithSearchResult:(GRFXEntry *)searchResult;
 @end

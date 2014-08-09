@@ -8,7 +8,7 @@
 
 #import "GRFXMainViewController.h"
 #import "GRFXResultsCell.h"
-#import "GRFXSearchResult.h"
+#import "GRFXEntry.h"
 #import "GRFXResultDetailsViewController.h"
 #import "SVProgressHUD.h"
 
@@ -128,7 +128,7 @@
 {
     static const NSString *cellID = @"ResultsCell";
     GRFXResultsCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
-    GRFXSearchResult *searchResult = [_results objectAtIndex:indexPath.row];
+    GRFXEntry *searchResult = [_results objectAtIndex:indexPath.row];
     [cell fillCellWithSearchResult:searchResult];
     return cell;
 }
@@ -141,9 +141,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    GRFXResultDetailsViewController *controller = segue.destinationViewController;
-    GRFXSearchResult *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
-    controller.searchResult = searchResult;
+    if ([segue.identifier isEqualToString:@"DetailsSegue"])
+    {
+        GRFXResultDetailsViewController *controller = segue.destinationViewController;
+        GRFXEntry *searchResult = [_results objectAtIndex:[_tableView indexPathForSelectedRow].row];
+        controller.entry = searchResult;
+        controller.hidesBottomBarWhenPushed = YES;
+    }
 }
 
 - (IBAction)didTapSearch:(id)sender

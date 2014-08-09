@@ -4,18 +4,18 @@
 //
 
 
-#import "GRFXSearchResult.h"
+#import "GRFXEntry.h"
 
 
-@implementation GRFXSearchResult
+@implementation GRFXEntry
 {
 
 @private
     NSString *_keyword;
-    NSString *_value;
-    NSString *_dictname;
+    NSString *_text;
+    NSString *_dictionaryName;
 }
 @synthesize keyword = _keyword;
-@synthesize value = _value;
-@synthesize dictname = _dictname;
+@synthesize text = _text;
+@synthesize dictionaryName = _dictionaryName;
 @end

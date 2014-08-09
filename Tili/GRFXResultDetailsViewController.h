@@ -6,10 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRFXSearchResult;
+@class GRFXEntry;
 
 
 @interface GRFXResultDetailsViewController : UIViewController <UIWebViewDelegate>
 @property(weak) IBOutlet UIWebView *webView;
-@property GRFXSearchResult *searchResult;
+@property GRFXEntry *entry;
+@property BOOL bookmarked;
+
+- (IBAction)didTouchBookmarkButton:(id)sender;
 @end

@@ -19,18 +19,25 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DCKeyValueObjectMapping (1.4)
+  - FMDB (2.3):
+    - FMDB/standard
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
   - GoogleAnalytics-iOS-SDK (3.0.7)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - DCKeyValueObjectMapping (~> 1.4)
+  - FMDB
   - GoogleAnalytics-iOS-SDK (~> 3.0.2)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
+  FMDB: 31ec26773c7f7b7890a6038235a1f2bbd933a7cb
   GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
